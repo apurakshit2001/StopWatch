@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    font-family: 'Kalnia', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: url(./bkg4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.counter {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.342);
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.979);
+    color: #221502;
+    height: 500px;
+    width: 500px;
+    font-size: 7em;
+    margin-bottom: 20px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 0px 20px;
+    font-size: 4em;
+    font-family: 'Kalnia', serif;
+    padding: -5px 70px;
+    cursor: pointer;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    background-color: #a78c68;
+    color: #3f2d15;
+    text-align: center;
+    box-shadow: 5px 12px 20px rgba(0, 0, 0, 0.247);
+}
+
+button:hover {
+    background-color: #2215029d;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.glow {
+    text-shadow: 0 0 10px #ffffff77,
+        0 0 20px #ffffff77,
+        0 0 30px #ffffff77,
+        0 0 40px #ffffff77,
+        0 0 50px #ffffff77,
+        0 0 60px #ffffff77,
+        0 0 70px #ffffff77;
+}
+
+
+@media screen and (max-width: 686px) {
+    .counter {
+        height: 350px;
+        width: 350px;
+        font-size: 5em;
+    }
+
+    .btns {
+        width: 80vw;
+    }
+    button{
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .counter {
+        height: 300px;
+        width: 300px;
+        font-size: 4em;
+    }
+
+    button {
+        font-size: 2em;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    body {
+        background: url(./zitesh-kaushal-t2hoyQ6OxGM-unsplash.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+    }
+
+    .counter {
+        height: 250px;
+        width: 250px;
+        font-size: 3em;
+        color: #0004ff;
+    }
+
+    .btns {
+        flex-direction: column;
+        width: 90vw;
+        gap: 5px;
+    }
+
+    button {
+        font-size: 1.9em;
+        padding: 6px 12px;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Stopwatch</title>
+    <link rel="stylesheet" href="./stopwatch.css">
+</head>
+
+<body>
+    <h1 class="counter" id="counter">
+        <span id="hours" class="glow">00</span>:<span id="minutes" class="glow">00</span>:<span id="seconds"
+            class="glow">00</span>
+    </h1>
+    <div class="btns">
+        <button id="startStopBtn" onclick="toggleStopwatch()">Start</button>
+        <button id="resetBtn" onclick="resetButton()">Reset</button>
+    </div>
+
+    <script>
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+        let secondInterval, minuteInterval, hourInterval;
+        const secondsDisplay = document.getElementById('seconds');
+        const minutesDisplay = document.getElementById('minutes');
+        const hoursDisplay = document.getElementById('hours');
+        const startStopBtn = document.getElementById('startStopBtn');
+
+        function resetButton() {
+            clearInterval(secondInterval);
+            clearInterval(minuteInterval);
+            clearInterval(hourInterval);
+            secondInterval = undefined;
+            minuteInterval = undefined;
+            hourInterval = undefined;
+            startStopBtn.textContent = 'Start';
+
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            updateDisplay();
+        }
+
+        function toggleStopwatch() {
+            if (secondInterval) {
+                clearInterval(secondInterval);
+                clearInterval(minuteInterval);
+                clearInterval(hourInterval);
+                secondInterval = undefined;
+                minuteInterval = undefined;
+                hourInterval = undefined;
+                startStopBtn.textContent = 'Start';
+            } else {
+                secondInterval = setInterval(updateSeconds, 1000);
+                minuteInterval = setInterval(updateMinutes, 60000);
+                hourInterval = setInterval(updateHours, 3600000);
+                startStopBtn.textContent = 'Stop';
+            }
+        }
+
+        function updateSeconds() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+            }
+            updateDisplay();
+        }
+
+        function updateMinutes() {
+            minutes++;
+            if (minutes === 60) {
+                minutes = 0;
+            }
+            updateDisplay();
+        }
+
+        function updateHours() {
+            hours++;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            if (seconds < 10) {
+                secondsDisplay.textContent = '0' + seconds;
+            } else {
+                secondsDisplay.textContent = seconds;
+            }
+
+            if (minutes < 10) {
+                minutesDisplay.textContent = '0' + minutes;
+            } else {
+                minutesDisplay.textContent = minutes;
+            }
+
+            if (hours < 10) {
+                hoursDisplay.textContent = '0' + hours;
+            } else {
+                hoursDisplay.textContent = hours;
+            }
+        }
+    </script>
+</body>
+
+</html>
