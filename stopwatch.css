@@ -38,6 +38,9 @@ body {
     transition: 1s ease-in-out;
 }
 
+.heading{
+    display: none;
+}
 .btns {
     display: flex;
     justify-content: space-around;
@@ -140,5 +143,9 @@ button:active {
     button {
         font-size: 1.9em;
         padding: 6px 12px;
+    }
+    .heading{
+        font-size: 3em;
+        display: block;
     }
 }
