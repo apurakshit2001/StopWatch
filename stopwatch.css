@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: ease-in-out;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +35,7 @@ body {
     width: 500px;
     font-size: 7em;
     margin-bottom: 20px;
+    transition: 1s ease-in-out;
 }
 
 .btns {
@@ -91,7 +94,8 @@ button:active {
     .btns {
         width: 80vw;
     }
-    button{
+
+    button {
         padding: 0 5px;
     }
 }
